@@ -30,6 +30,9 @@ export default function DesignerContextProvider({ children }: { children: ReactN
   };
 
   const removeElement = (id: string) => {
+    if (id == selectedElement?.id) {
+      setSelectedElement(null);
+    }
     setElements((prev) => prev.filter((element) => element.id !== id));
   };
 
